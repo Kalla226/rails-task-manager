@@ -1,0 +1,18 @@
+<div class="container">
+
+  <h1>Terrible Task List</h1>
+
+  <ul>
+    <% @tasks.each do |task| %>
+    <li>
+      <% if task.completed %>
+      <i class="fas fa-check"></i>
+      <% else %>
+      <i class="far fa-circle"></i>
+      <% end %>
+      <%= link_to task.title, task_path(task)%>
+      </li>
+      <% end %>
+      <%= link_to 'edit Tasks', new_task_path %>
+    </ul>
+ </div>
